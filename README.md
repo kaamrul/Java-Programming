@@ -27,9 +27,6 @@ Behavior: Open door, close door
 ```
 *So if I had to write a class based on states and behaviours of House. I can do it like this: States can be represented as instance variables and behaviours as methods of the class. We will see how to create classes in the next section of this guide.*
 
-### What is a Class?
-A class can be defined as a template/blueprint of object.
-
 #### Example
 ```.java
 class House {
@@ -51,7 +48,179 @@ class House {
 ```
 **Note:** As we have seen above, the states and behaviors of an object, can be represented by variables and methods in the class respectively.
 
-### What is Constructor?
+### What is a Class?
+A class is a group of objects which have common properties. A class can be defined as a template/blueprint of object. It is a logical entry. It can't be physical.
+
+A class in Java can contain:
+- Fields
+- Methods
+- Constructor
+- Blocks
+- Nested Class and Interface
+
+#### Syntex to declare a class
+```.java
+class class_name{
+   field;
+   method;
+}
+```
+
+#### Object and Class Example: main within the class
+```.java
+//Java program to illustrate how to define a class and fields
+// Defining a Student class
+class Student{
+   // defining fields
+   int id; // field or data member or instance variable
+   string name;
+
+   //creating main method inside the Student class
+   public static void main (String args[]){
+      
+      // creating an objects or instance
+      Student s1 = new Student(); // creating an objects of Student
+
+      // printing values of the object
+      System.out.println(s1, id); // accessing member through reference variable
+      System.out.println(s1, name);
+   }
+}
+
+Output:
+0
+null
+```
+
+#### Object and Class Example: main outside the class
+```.java
+//Java Program to demonstrate having the main method in   
+//another class  
+//Creating Student class.  
+class Student{  
+ int id;  
+ String name;  
+}
+
+//Creating another class TestStudent1 which contains the main method  
+class TestStudent1{  
+ public static void main(String args[]){  
+  Student s1=new Student();  
+  System.out.println(s1.id);  
+  System.out.println(s1.name);  
+ }  
+} 
+
+Output:
+0
+null 
+```
+
+### 3 Ways to initialize object
+- There are 3 ways to initialize object in Java.
+   - By reference variable
+   - By method
+   - By constructor
+
+### 1. Object and Class Example: Initialization through reference
+Initializing an object means storing data into the object.
+
+```.java
+class Student{  
+ int id;  
+ String name;  
+}  
+class TestStudent2{  
+ public static void main(String args[]){  
+  
+  Student s1=new Student(); // Creating objects 
+  
+  // initializing data
+  s1.id = 10;  
+  s1.name = "Kamrul";  
+  
+  System.out.println(s1.id+" "+s1.name); //printing members with a white space  
+ }  
+}  
+
+Output:
+10 Kamrul
+```
+
+We can also create multiple objects and store information in it through reference variable.
+
+```.java
+class Student{  
+ int id;  
+ String name;  
+}  
+class TestStudent3{  
+ public static void main(String args[]){  
+  
+  //Creating objects  
+  Student s1=new Student();  
+  Student s2=new Student();
+
+  //Initializing objects  
+  s1.id=10;  
+  s1.name="Kamrul";  
+  s2.id=11;  
+  s2.name="Hasan";
+
+  //Printing data  
+  System.out.println(s1.id+" "+s1.name);  
+  System.out.println(s2.id+" "+s2.name);  
+ }  
+}
+Output:
+10 Kamrul
+11 Hasan
+```
+
+### 2. Object and Class Example: Initialization through method
+we are creating the two objects of Student class and initializing the value to these objects by invoking the insertRecord method. Here, we are displaying the state (data) of the objects by invoking the displayInformation() method.
+
+```.java
+class Student{  
+ int rollno;  
+ String name;
+
+ //create methods with parameter for storing data/initialize object  
+ void insertRecord(int r, String n){  
+  rollno=r;  
+  name=n;  
+ }
+
+ // create methods without parameter for displaying data 
+ void displayInformation(){
+   System.out.println(rollno+" "+name);
+ }  
+} 
+
+class TestStudent4{  
+ public static void main(String args[]){  
+  
+  // create objects
+  Student s1=new Student();  
+  Student s2=new Student();
+
+  // initializing objects by calling insertRecord methods  
+  s1.insertRecord(111,"Karan");  
+  s2.insertRecord(222,"Aryan"); 
+
+  // displaying data by calling displayInformation methods 
+  s1.displayInformation();  
+  s2.displayInformation();  
+ }  
+}  
+
+Output:
+111 Karan
+112 Aryan
+```
+### 3. Object and Class Example: Initialization through a constructor
+
+#### What is Constructor?
 Constructor looks like a method but it is in fact not a method. It’s name is same as class name and it does not return any value. 
 
 - Default Constructor
@@ -121,5 +290,201 @@ Chaitanya 30
 Steve 56
 ```
 
+### Object and Class Example: Employee
+```.java
+class Employee{
 
+    // fields
+    int id;  
+    String name;  
+    float salary;
 
+    // create method with parameter for storing data/initialize object 
+    void insert(int i, String n, float s){  
+        id=i;  
+        name=n;  
+        salary=s;  
+    }
+
+   // create method for displaying data
+    void display(){
+      System.out.println(id+" "+name+" "+salary);
+   }  
+}
+
+public class TestEmployee {  
+public static void main(String[] args){ 
+
+   // creating objects 
+    Employee e1=new Employee();  
+    Employee e2=new Employee();  
+    Employee e3=new Employee();
+
+    // initializing objects
+    e1.insert(101,"Ajeet",45000);  
+    e2.insert(102,"Irfan",25000);  
+    e3.insert(103,"Nakul",55000);
+
+    // printing data
+    e1.display();  
+    e2.display();  
+    e3.display();  
+   }  
+}
+
+Output:
+101 Ajeet 45000
+102 Irfan 25000
+103 Nakul 55000
+```
+### Object and Class Example: Rectangle
+```.java
+class Rectangle{
+
+// fields
+  int length;  
+  int width;
+
+// create method with parameter for storing data/initialize object 
+  void insert(int l, int w){  
+    length=l;  
+    width=w;  
+  }
+
+// create method for displaying data
+  void calculateArea(){
+    System.out.println(length*width);
+  }  
+}
+
+class TestRectangle1{  
+ public static void main(String args[]){
+
+  // creating objects 
+  Rectangle r1=new Rectangle();  
+  Rectangle r2=new Rectangle();
+
+  // initializing objects
+  r1.insert(11,5);  
+  r2.insert(3,15); 
+
+  // printing data
+  r1.calculateArea();  
+  r2.calculateArea();  
+  }  
+}
+
+Output:
+55
+45  
+```
+###Creating multiple objects by one type only
+```.java
+//Java Program to illustrate the use of Rectangle class which  
+//has length and width data members  
+class Rectangle{
+ // fields  
+ int length;  
+ int width; 
+
+ // creating method with parameter for storing data/initialize object 
+ void insert(int l,int w){  
+  length=l;  
+  width=w;  
+ } 
+
+// creating method without parameter for displaying data
+ void calculateArea(){
+  System.out.println(length*width);
+  }  
+}  
+class TestRectangle2{  
+ public static void main(String args[]){ 
+
+  //creating two objects
+  Rectangle r1=new Rectangle(), r2=new Rectangle();   
+  
+  // initializing objects
+  r1.insert(11,5);  
+  r2.insert(3,15);
+
+  // displaying data
+  r1.calculateArea();  
+  r2.calculateArea();  
+  }  
+}
+
+Output:
+55 
+45
+```
+
+### Real World Example: Account
+```.java
+//Java Program to demonstrate the working of a banking-system  
+//where we deposit and withdraw amount from our account.  
+//Creating an Account class which has deposit() and withdraw() methods 
+
+class Account{
+  int acc_no;
+  String name;
+  float amount;
+
+  // method to initialize objects
+  void insert(int a, String n, float amt){
+    acc_no = a;
+    name = n;
+    amount = amt;
+  }
+
+  // deposite method
+  void diposite(float amt){
+    amount = amount + amt;
+    System.out.println(amt+"deposited");
+  }
+
+  //withdraw method
+  void withdraw(float amt){
+    if(amount<amt){
+      System.out.println("Insufficient Balance");
+    }
+    else{
+      amount = amount - amt;
+      System.out.println(amt+"withdrawn");
+    }
+  }
+
+  // method to check the balance of the amount
+  void checkBalance(){
+    System.out.println("Balance is: "+amount);
+  }
+
+  // method to display the value of an objects
+  void display(){
+    System.out.println(acc_no+" "+name+" "+amount);
+  }
+}
+
+class TestAccount{
+  public static void main(String args[]){
+
+    Account a1 = new Account();
+    a1.insert(832345, "Kamrul", 1000);
+    a1.display();
+    a1.checkBalance();
+    a1.diposite(40000);
+    a1.checkBalance();
+    a1.withdraw(15000);
+    a1.checkBalance();
+  }
+}
+
+Output:
+832345 Kamrul 1000.0
+Balance is: 1000.0
+40000.0 deposited
+Balance is: 41000.0
+15000.0 withdrawn
+Balance is: 26000.0
+
+```
