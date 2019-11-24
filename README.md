@@ -6,10 +6,10 @@
 - Class
 - Constructor in Java
 - Object Oriented Programming Features
-	> Abstruction
-	> Encapsulation
-	> Inheritance
-	> Polymorphism
+	- Abstruction
+	- Encapsulation
+	- Inheritance
+	- Polymorphism
 - Abstract Class and Methods
 - Interfaces in Java
 
