@@ -378,7 +378,7 @@ Output:
 55
 45  
 ```
-###Creating multiple objects by one type only
+### Creating multiple objects by one type only
 ```.java
 //Java Program to illustrate the use of Rectangle class which  
 //has length and width data members  
@@ -486,5 +486,5 @@ Balance is: 1000.0
 Balance is: 41000.0
 15000.0 withdrawn
 Balance is: 26000.0
-
 ```
+# Happy Journey 
