@@ -2,16 +2,16 @@
 
 ## OOP Concepts in JAVA
 
-1. Object
-2. Class
-3. Constructor in Java
-4. Object Oriented Programming Features
+- Object
+- Class
+- Constructor in Java
+- Object Oriented Programming Features
 	> Abstruction
 	> Encapsulation
 	> Inheritance
 	> Polymorphism
-5. Abstract Class and Methods
-6. Interfaces in Java
+- Abstract Class and Methods
+- Interfaces in Java
 
 ### What is an Object?
 ```
