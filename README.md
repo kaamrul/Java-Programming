@@ -218,77 +218,6 @@ Output:
 111 Karan
 112 Aryan
 ```
-### 3. Object and Class Example: Initialization through a constructor
-
-#### What is Constructor?
-Constructor looks like a method but it is in fact not a method. It’s name is same as class name and it does not return any value. 
-
-- Default Constructor
-- Parameterized Constructor
-- No - Arg Constructor
-
-#### Example of Constructor 1
-
-```.java
-public class Dog {
-   //fields (or instance variable)
-   String Dname;
-   int Dage;
-
-   // constructor
-   Dog(String name, int age){
-      this.Dname = name;
-      this.Dage = age;
-   }
-   public static void main(String args[]){
-      //Creating objects
-      Dog obj1 = new Dog("Buddy", 5);
-      Dog obj2 = new Dog("Teddy", 3);
-
-     //Accessing object data through reference
-     System.out.println(obj1.Dname+" "+obj1.Dage);
-     System.out.println(obj2.Dname+" "+obj2.Dage);
-   }
-}
-
-Output:
-Buddy 5
-Teddy 3
-```
-#### Example of Constructor 2
-
-```.java
-public class ConstructorExample {
-
-   int age;
-   String name;
-   
-   //Default constructor
-   ConstructorExample(){
-   this.name="Chaitanya";
-   this.age=30;
-   }
-   
-   //Parameterized constructor
-   ConstructorExample(String n,int a){
-   this.name=n;
-   this.age=a;
-   }
-   public static void main(String args[]){
-   ConstructorExample obj1 = new ConstructorExample(); // call default constructor
-
-   ConstructorExample obj2 = new ConstructorExample("Steve", 56); // call parameterized constructor
-
-   System.out.println(obj1.name+" "+obj1.age);
-   System.out.println(obj2.name+" "+obj2.age);
-   }
-}
-
-Output:
-
-Chaitanya 30
-Steve 56
-```
 
 ### Object and Class Example: Employee
 ```.java
@@ -487,4 +416,202 @@ Balance is: 41000.0
 15000.0 withdrawn
 Balance is: 26000.0
 ```
+
+### 3. Object and Class Example: Initialization through a constructor
+
+#### What is Constructor?
+Constructor looks like a method but it is in fact not a method. Constructor name must be the same as its class name and it does not return any value. A Java constructor cannot be abstract, static, final, and synchronized.
+
+- Default Constructor (no-arg constructor)
+- Parameterized Constructor
+
+#### Example of default constructor 1
+```.java
+//Java Program to create and call a default constructor  
+class Bike1{  
+
+//creating a default constructor  
+Bike1(){
+  System.out.println("Bike is created");
+  }  
+ 
+public static void main(String args[]){  
+
+  //calling a default constructor  
+  Bike1 b=new Bike1();  
+  }  
+} 
+
+Output:
+Bike is created 
+```
+
+#### Example of default constructor 2
+```.java
+// which display the dafault values
+class Employee{
+  int id;
+  String name;
+
+  // method to display the value of id and name
+  void display(){
+    System.out.println(id+" "+name);
+  }
+
+  public static void main (String args[]){
+    // creating objects
+    Employee e1 = new Employee();
+    Employee e2 = new Employee();
+
+    // displaying value of the objects
+    e1.display();
+    e2.display();
+  }
+}
+
+Output:
+0 null
+0 null
+```
+
+#### Example of Parameterized constructor
+```.java
+class Employee{
+  int id;
+  String name;
+
+  // creating a parameterized constructor
+  Employee(int i, String n){
+    id = i;
+    name = n;
+  }
+
+  // method to display the value of id and name
+  void display(){
+    System.out.println(id+" "+name);
+  }
+
+  public static void main (String args[]){
+    // creating objects and passing values
+    Employee e1 = new Employee(111, "Bulbul");
+    Employee e2 = new Employee(112, "Foni");
+
+    // calling method to display value of the objects
+    e1.display();
+    e2.display();
+  }
+}
+
+Output:
+111 Bulbul
+112 Foni
+```
+
+#### Example of Constructor 1
+
+```.java
+public class Dog {
+   //fields (or instance variable)
+   String Dname;
+   int Dage;
+
+   // constructor
+   Dog(String name, int age){
+      this.Dname = name;
+      this.Dage = age;
+   }
+   public static void main(String args[]){
+      //Creating objects
+      Dog obj1 = new Dog("Buddy", 5);
+      Dog obj2 = new Dog("Teddy", 3);
+
+     //Accessing object data through reference
+     System.out.println(obj1.Dname+" "+obj1.Dage);
+     System.out.println(obj2.Dname+" "+obj2.Dage);
+   }
+}
+
+Output:
+Buddy 5
+Teddy 3
+```
+#### Example of Constructor 2
+
+```.java
+public class ConstructorExample {
+
+   int age;
+   String name;
+   
+   //Default constructor
+   ConstructorExample(){
+   this.name="Chaitanya";
+   this.age=30;
+   }
+   
+   //Parameterized constructor
+   ConstructorExample(String n,int a){
+   this.name=n;
+   this.age=a;
+   }
+   public static void main(String args[]){
+   ConstructorExample obj1 = new ConstructorExample(); // call default constructor
+
+   ConstructorExample obj2 = new ConstructorExample("Steve", 56); // call parameterized constructor
+
+   System.out.println(obj1.name+" "+obj1.age);
+   System.out.println(obj2.name+" "+obj2.age);
+   }
+}
+
+Output:
+
+Chaitanya 30
+Steve 56
+```
+
+### Constructor Overloading in Java
+Constructor overloading in Java is a technique of having more than one constructor with different parameter lists. They are arranged in a way that each constructor performs a different task. They are differentiated by the compiler by the number of parameters in the list and their types.
+
+#### Example of Constructor Overloading
+```.java
+class Employee{
+  int id;
+  String name;
+  int age
+
+  // creating two arg constructor
+  Employee(int i, String n){
+    id = i;
+    name = n;
+  }
+
+  //creating three arg constructor
+  Employee(int i, String n, int a){
+    id = i;
+    name = n;
+    age = a;
+  }
+
+  // method to display the value of id and name
+  void display(){
+    System.out.println(id+" "+nam+ " "+age);
+  }
+
+  public static void main (String args[]){
+    // creating objects and passing values
+    Employee e1 = new Employee(111, "Bulbul");
+    Employee e2 = new Employee(112, "Foni", 27);
+
+    // calling method to display value of the objects
+    e1.display();
+    e2.display();
+  }
+}
+
+Output:
+111 Bulbul 0
+112 Foni 27
+```
+
 # Happy Journey 
