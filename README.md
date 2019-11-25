@@ -614,4 +614,14 @@ Output:
 112 Foni 27
 ```
 
+### Java Copy Constructor
+There is no copy constructor in Java.There are many ways to copy the values of one object into another in Java. They are:
+
+- By constructor
+- By assigning the values of one object into another
+- By clone() method of Object class
+
+
+
+
 # Happy Journey 
