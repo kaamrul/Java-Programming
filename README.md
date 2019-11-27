@@ -661,5 +661,44 @@ Output:
 111 Bulbul
 111 Bulbul
 ```
+### Copying values without constructor
+We can copy the values of one object into another by assigning the objects values to another object. In this case, there is no need to create the constructor.
 
+```.java
+class Employee{
+  int id;
+  String name;
+
+  // creating two arg constructor
+  Employee(int i, String n){
+    id = i;
+    name = n;
+  }
+
+  //creating three arg constructor
+  Employee(){ }
+
+  // method to display the value of id and name
+  void display(){
+    System.out.println(id+" "+name);
+  }
+
+  public static void main (String args[]){
+    // creating objects and passing values
+    Employee e1 = new Employee(111, "Bulbul");
+    Employee e2 = new Employee();
+
+    e2.id = e1.id;
+    e2.name = e1.name;
+
+    // calling method to display value of the objects
+    e1.display();
+    e2.display();
+  }
+}
+
+Output:
+111 Bulbul
+111 Bulbul
+```
 ## Happy Journey 
