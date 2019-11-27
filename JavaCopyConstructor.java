@@ -1,3 +1,4 @@
+//Java program to initialize the values from one object to another object.  
 class Employee{
   int id;
   String name;
@@ -22,7 +23,7 @@ class Employee{
   public static void main (String args[]){
     // creating objects and passing values
     Employee e1 = new Employee(111, "Bulbul");
-    Employee e2 = new Employee(112, "Foni");
+    Employee e2 = new Employee(e1);
 
     // calling method to display value of the objects
     e1.display();
