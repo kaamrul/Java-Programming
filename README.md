@@ -701,4 +701,17 @@ Output:
 111 Bulbul
 111 Bulbul
 ```
+
+#### Q. Does constructor return any value?
+Yes, it is the current class instance (You cannot use return type yet it returns a value).
+
+#### Q. Can constructor perform other tasks instead of initialization?
+Yes, like object creation, starting a thread, calling a method, etc. You can perform any operation in the constructor as you perform in the method.
+
+#### Is there Constructor class in Java?
+Yes.
+
+#### What is the purpose of Constructor class?
+Java provides a Constructor class which can be used to get the internal information of a constructor in the class. It is found in the java.lang.reflect package.
+
 ## Happy Journey 
